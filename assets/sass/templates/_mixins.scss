@@ -1,0 +1,68 @@
+/*------------------------------------*\
+    $Mixins
+\*------------------------------------*/
+
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+
+
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $break-mobile) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-mobile + 1) and (max-width: $break-tablet) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-desktop) { @content; }
+  }
+
+  @else if $media == bigscreen {
+    @media only screen and (min-width: $break-bigscreen) { @content; }
+  }
+}
+
+
+
+@mixin old-ie {
+    // Only use this content if we're dealing with old IE
+    @if $old-ie {
+        @content;
+    }
+}
+
+
+//--------------------------------
+// Photoshop Drop Shadow - http://heygrady.com/blog/2011/08/06/recreating-photoshop-drop-shadows-in-css3-and-compass/
+
+
+//example {
+ // @include photoshop-drop-shadow(120, 10px, 50, 10px, rgba(0, 0, 0, 0.75)); }
+
+
+//--------------------------------
+@mixin photoshop-drop-shadow ($angle: 0, $distance: 0, $spread: 0, $size: 0, $color: #000, $inner: false) {
+  $angle: (180 - $angle) * pi() / 180; // convert to radians
+  $h-shadow: round(cos($angle) * $distance);
+  $v-shadow: round(sin($angle) * $distance);
+  $css-spread: $size * $spread/100;
+  $blur: ($size - $css-spread);
+  $inset: if($inner != false, 'inset', '');
+  
+ // @include box-shadow($h-shadow $v-shadow $blur $css-spread $color unquote($inset));
+}
+ 
+ 
+//--------------------------------
+// Photoshop Inner Shadow
+//--------------------------------
+@mixin photoshop-inner-shadow ($angle: 0, $distance: 0, $spread: 0, $size: 0, $color: #000) {
+  @include photoshop-drop-shadow ($angle, $distance, $spread, $size, $color, true);
+}

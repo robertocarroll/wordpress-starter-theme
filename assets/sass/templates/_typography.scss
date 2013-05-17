@@ -1,0 +1,255 @@
+/*------------------------------------*\
+    $Typography
+\*------------------------------------*/
+
+	/*  Responsive bits to modify Innuit sizes for different screen sizes */
+
+	h1,.alpha{
+
+		@include respond-to(tablet) { @include font-size($h1-size); }	
+    
+	}
+
+	h2,.beta{
+		@include respond-to(tablet) { @include font-size($h2-size); }
+	 
+	}
+	
+	h3,.gamma{
+	    @include respond-to(tablet) { @include font-size($h3-size); }
+	}
+	
+	h4,.delta{
+	    @include respond-to(tablet) { @include font-size($h4-size); }
+	}
+	
+	h5,.epsilon{
+	    @include respond-to(tablet) { @include font-size($h5-size); }
+	}
+	
+	h6,.zeta{
+	    @include respond-to(tablet) { @include font-size($h6-size); }
+	}
+
+	
+	p {
+		font-style: normal;
+		font-weight: 400;
+
+	}
+
+	.mid-line {
+		line-height: $mid-line-height;
+
+	}
+
+	.big-line {
+		line-height: $big-line-height;
+
+	}
+
+	.italic { 
+		font-style: italic;
+	}
+
+	.bold { 
+		font-style: normal;
+		font-weight: 700;
+	}
+
+	.bold-italic { 	
+		font-style: italic;
+		font-weight: 700;
+	}	
+
+	.light-italic {
+		font-style: italic;
+		font-weight: 300;
+	}
+
+	.light {
+		font-style: normal;
+		font-weight: 300;
+	}
+
+	.light p {
+		font-style: normal;
+		font-weight: 300;
+	}
+
+	.small {
+		font-size: $milli-size;
+		line-height: $lowest-line-height;		 
+	}
+
+	.micro {
+		font-size: 	$micro-size;
+		line-height: $lowest-line-height;
+	}
+
+	.no-padding {margin: 0;}
+
+	.uppercase {text-transform: uppercase;}
+
+	/*  <strong>For emphasizing a snippet of text with important</strong> */
+	strong {
+		font-style: normal;
+		font-weight: 700;
+	}
+
+	/*  <em>For emphasizing a snippet of text with stress</em> */
+	em {
+		font-style: italic;
+		font-weight: 400;
+	}
+	
+	/*  Class for muted text */
+	.muted {color: #999999;}
+	
+	
+	/*  Defines a thematic change in the content */
+	hr {
+	  margin: 20px 0;
+	  border: 0;
+	  border-top: 1px solid #eeeeee;
+	  border-bottom: 1px solid #ffffff;
+	}
+	
+	/*  Stylized implemenation of HTML's <abbr> element for abbreviations and acronyms to show the expanded version on hover. 
+	Abbreviations with a title attribute have a light dotted bottom border and a help cursor on hover, 
+	providing additional context on hover. 
+	
+	<abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
+	*/
+	
+	abbr[title] {
+	  cursor: help;
+	  border-bottom: 1px dotted #999999;
+	}
+	abbr.initialism {
+	  font-size: 90%;
+	  text-transform: uppercase;
+	}
+
+	/*  For quoting blocks of content from another source within your document */
+	blockquote {
+	  padding: 0 0 0 15px;
+	  margin: 0 0 20px;
+	  border-left: 5px solid #eeeeee;
+	}
+
+	blockquote p {
+	  margin-bottom: 0;
+	  font-size: 16px;
+	  font-weight: 300;
+	  line-height: 25px;
+	}
+
+	blockquote small {
+	  display: block;
+	  line-height: 20px;
+	  color: #999999;
+	}
+
+	blockquote small:before {
+	  content: '\2014 \00A0';
+	}
+	
+	/*  Add <small> tag for identifying the source. Wrap the name of the source work in <cite>.
+		<small>Someone famous <cite title="Source Title">Source Title</cite></small>
+	 */
+	
+	cite {
+	  font-style: normal;
+	}
+	
+	/*  <small>For fine print etc.</small> */
+	small {font-size: 85%;}
+
+
+	/* Floated, right-aligned blockquote. */
+
+	blockquote.pull-right {
+	  float: right;
+	  padding-right: 15px;
+	  padding-left: 0;
+	  border-right: 5px solid #eeeeee;
+	  border-left: 0;
+	}
+
+	blockquote.pull-right p,
+	blockquote.pull-right small {
+	  text-align: right;
+	}
+	blockquote.pull-right small:before {
+	  content: '';
+	}
+	blockquote.pull-right small:after {
+	  content: '\00A0 \2014';
+	}
+
+	q:before,
+	q:after,
+	blockquote:before,
+	blockquote:after {
+	  content: "";
+	}
+
+	/* Present contact information. Use <br> for line breaks */
+	address {
+	  display: block;
+	  margin-bottom: 20px;
+	  font-style: normal;
+	  line-height: 20px;
+	}
+	
+	/* To display code etc. */
+	code,
+	pre {
+	  padding: 0 3px 2px;
+	  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	  font-size: 12px;
+	  color: #333333;
+	  -webkit-border-radius: 3px;
+	  -moz-border-radius: 3px;
+	  border-radius: 3px;
+	}
+	code {
+	  padding: 2px 4px;
+	  color: #d14;
+	  background-color: #f7f7f9;
+	  border: 1px solid #e1e1e8;
+	}
+	pre {
+	  display: block;
+	  padding: 9.5px;
+	  margin: 0 0 10px;
+	  font-size: 13px;
+	  line-height: 20px;
+	  word-break: break-all;
+	  word-wrap: break-word;
+	  white-space: pre;
+	  white-space: pre-wrap;
+	  background-color: #f5f5f5;
+	  border: 1px solid #ccc;
+	  border: 1px solid rgba(0, 0, 0, 0.15);
+	  -webkit-border-radius: 4px;
+	  -moz-border-radius: 4px;
+	  border-radius: 4px;
+	}
+	pre.prettyprint {
+	  margin-bottom: 20px;
+	}
+	pre code {
+	  padding: 0;
+	  color: inherit;
+	  background-color: transparent;
+	  border: 0;
+	}
+	.pre-scrollable {
+	  max-height: 340px;
+	  overflow-y: scroll;
+	}
+
+
+

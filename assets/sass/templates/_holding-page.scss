@@ -1,0 +1,40 @@
+
+.main-holding {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    padding: 5%;
+    text-align: center;
+    color: white;
+}
+
+
+.contact {
+	background: white;
+	color: #688390;
+	padding: 8px;
+	@include photoshop-inner-shadow(46, 3px, 0, 4px, rgba(#000, 0.58));
+    line-height: $lowest-line-height;
+
+    
+}
+
+.contact-us {
+
+@include respond-to(mobile) { 
+        font-size: $h4-size;
+    
+    }
+}
+
+.no-margin {
+	margin-bottom: 0;
+}
+
+.padding-top {
+    padding-top: $base-spacing-unit*2;
+}
+
+.padding-bottom {
+    padding-bottom: $base-spacing-unit*2;
+}
